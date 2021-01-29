@@ -10,6 +10,7 @@ import axios from 'axios';
    state={blogs:[],title:'',content:''}
 
   componentDidMount() {
+    //   let author=document.getElementById('profile').textContent;
     axios.get(`https://cors-anywhere.herokuapp.com/https://600e587a3bb1d100179dee45.mockapi.io/blogs`,{ crossdomain: true })
       .then(res => {
         // console.log(res.data);
@@ -21,7 +22,7 @@ import axios from 'axios';
       const id=event.target.id.value;
       axios.delete('https://cors-anywhere.herokuapp.com/https://600e587a3bb1d100179dee45.mockapi.io/blogs/'+id)
       .then(res=>{
-          console.log(res.data);
+        //   console.log(res.data);
           alert("Post Deleted");
       })
   }
@@ -37,7 +38,7 @@ import axios from 'axios';
       let id=document.getElementById('id').textContent;
         axios.put('https://cors-anywhere.herokuapp.com/https://600e587a3bb1d100179dee45.mockapi.io/blogs/'+id,{title,content})
       .then(res=>{
-          console.log(res.data);
+        //   console.log(res.data);
           alert("blog updated");
           window.location.assign('http://localhost:3000/');
       })
@@ -63,10 +64,10 @@ import axios from 'axios';
              <div key={blog.id} className="blogs-list-item">
                  <div>ID:{blog.id}</div><div>TITLE:{blog.title}</div>
                  <div>{blog.content}</div><div>AUTHOR:{blog.author}</div>
-                 <button onClick={()=>this.updateBlog(blog.id)}>Update</button>
                  <form onSubmit={this.onDelete}>
                      <input type="hidden" name="id" value={blog.id} readOnly/>
                  <button type="submit">Delete</button></form>
+                 <button onClick={()=>this.updateBlog(blog.id)}>Update</button>
             </div>)}
            </div>
        );

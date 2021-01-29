@@ -7,52 +7,94 @@
   text-align: center;
   height: 100%;
 }
-.App-header,.App-footer{
-  background-color: dimgrey;
-  color: rgb(55, 127, 190);
-  padding:20px;
+.nav{
   display: flex;
-  flex-direction: row;
-  /* flex-wrap: wrap; */
-  align-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: dimgrey;
+  color: aliceblue;
+  font-weight: bold;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
 }
-.App-header>div{
-  padding:20px;
+.nav>div{
+  flex: 33%;
+}
+.nav-content{
+  background-color: deeppink;
+  color: aquamarine;
+}
+.App-footer{
   background-color: rgb(152, 152, 204);
   color: antiquewhite;
-  width: 100%;
+  font-weight: bolder;
+  padding:5px;
+  display: flex;
+  flex-wrap: wrap;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
 }
 .App-footer>div{
-  padding:20px;
-  background-color: rgb(152, 152, 204);
-  color: antiquewhite;
-  width: 100%;
+  margin: auto;
 }
 .blogs{
-  background-color: ivory;
+  background-color: rgb(161, 188, 223);
   color:black;
   padding: 0px 30px;
   padding-top: 10px;
 }
 .blogs-list{
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: auto auto auto;
   gap: 10px;
   padding: 10px 20px;
   grid-auto-flow: row;
 }
+@media only screen and (max-width:600px){
+  .blogs-list{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+  padding: 10px 20px;
+  grid-auto-flow: row;
+}
+}
+@media only screen and (max-width:500px){
+  .blogs-list{
+  display: grid;
+  grid-template-columns: 50%;
+  gap: 10px;
+  justify-items: center;
+  padding: 10px 20px;
+  grid-auto-flow: row;
+}
+}
 .blogs-list>div{
-  background-color: rgb(140, 192, 240);
+  background-color: rgb(58, 147, 231);
 }
 .blogs-list-item{
   display: grid;
   gap: 10px;
   grid-auto-flow: row;
   padding: 10px;
+  border-radius: 5px;
 }
 .form{
   padding:20px;
+  background-color: blanchedalmond;
 }
 .form>input{
   padding:20px;
+}
+.overlay{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+.overlay-text{
+  opacity: 0.5;
+ position: absolute;
+ background-color: rgba(7, 3, 0, 0.884);
+ color: seashell;
+ width: 200px;
 }

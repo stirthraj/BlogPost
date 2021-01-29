@@ -21,7 +21,7 @@ class Admin extends React.Component{
 
         axios.post('https://cors-anywhere.herokuapp.com/https://600e587a3bb1d100179dee45.mockapi.io/username',{author})
         .then(response=>{
-            console.log(response.data);
+            // console.log(response.data);
             alert("Account Created");
         });
     }
@@ -31,11 +31,13 @@ class Admin extends React.Component{
 
         axios.get('https://cors-anywhere.herokuapp.com/https://600e587a3bb1d100179dee45.mockapi.io/username')
         .then(res=>{
-            console.log(res.data);
+            // console.log(res.data);
             let i=0;
             for(i;i<res.data.length;i++)
             {
-                if(res.data[i].author===author){document.getElementById('profile').innerHTML=author;
+                if(res.data[i].author===author){
+                    document.getElementById('profile').innerHTML="Login as: "+author;
+                    document.getElementById('blog_add_1').style.display="block";
                 break;}
                 else if((res.data.length-1)===i){alert('Invalid Credentials');}
             }
@@ -47,25 +49,14 @@ class Admin extends React.Component{
         const author=this.state.name;
         const title=this.state.title;
         const content=this.state.content;
+        const img="https://picsum.photos/id";
 
-        axios.post('https://cors-anywhere.herokuapp.com/https://600e587a3bb1d100179dee45.mockapi.io/blogs',{author,title,content})
+        axios.post('https://cors-anywhere.herokuapp.com/https://600e587a3bb1d100179dee45.mockapi.io/blogs',{author,title,content,img})
         .then(res=>{
-            console.log(res.data);
+            // console.log(res.data);
             alert('blog added');
         })
     }
-
-    // componentDidMount(){
-    //     axios.get('https://cors-anywhere.herokuapp.com/https://600e587a3bb1d100179dee45.mockapi.io/blogs')
-    //     .then(res=>{
-    //         console.log(res.data);
-    //         const blog=res.data;
-    //         this.setState({blog});
-    //     })
-    // }
-    
-
-
     render(){
         return(<div className="blogs">
             <div className="form">Register
@@ -75,8 +66,6 @@ class Admin extends React.Component{
                 </form>
             </div>
 
-
-
             <div id="profile" className="form">Login
                 <form onSubmit={this.onSubmitLoginHandler}>
                     Name:<input type="text" name="name" onChange={this.onChangeHandler}/>
@@ -84,7 +73,7 @@ class Admin extends React.Component{
                 </form>
             </div>
 
-            <div className="form">Blog Add
+            <div style={{display:"none"}} id="blog_add_1" className="form">Now, Write Your Blog here
                 <form onSubmit={this.onSubmitPostHandler}>
                     {/* <input type="text" name="name"  onChange={this.onChangeHandler}/> */}
                     Title:<input type="text" name="title" onChange={this.onChangeHandler}/><br></br>
