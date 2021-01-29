@@ -62,8 +62,8 @@ import axios from 'axios';
                 </form>
              {this.state.blogs.map(blog=>
              <div key={blog.id} className="blogs-list-item">
-                 <div>ID:{blog.id}</div><div>TITLE:{blog.title}</div>
-                 <div>{blog.content}</div><div>AUTHOR:{blog.author}</div>
+                 <div>{blog.id}.{blog.title}</div>
+                 <div>{blog.content}</div><div>Author:{blog.author}</div>
                  <form onSubmit={this.onDelete}>
                      <input type="hidden" name="id" value={blog.id} readOnly/>
                  <button type="submit">Delete</button></form>

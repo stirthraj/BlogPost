@@ -55,7 +55,7 @@ class App extends React.Component {
                    <img src={blog.img+"/"+blog.id+"/200"} alt="img"/>
                    <div className="overlay-text">{blog.content}</div>
                    </div>
-                 <div>AUTHOR:{blog.author}</div>
+                 <div>Author:{blog.author}</div>
             </div>)}
            </div>
       </Card>
