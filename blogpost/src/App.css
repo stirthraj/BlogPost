@@ -11,24 +11,28 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  background-color: dimgrey;
-  color: aliceblue;
+  background-color:#fff;
+  color: rgb(7, 8, 8);
   font-weight: bold;
   border-bottom-left-radius: 25%;
   border-bottom-right-radius: 25%;
 }
 .nav>div{
-  flex: 33%;
+  flex: 30%;
 }
 .nav-content{
   background-color: deeppink;
   color: aquamarine;
 }
+.nav-layout{
+  background-color: blueviolet;
+  padding:10px;
+}
 .App-footer{
-  background-color: rgb(152, 152, 204);
+  background-color: rgb(0, 6, 20);
   color: antiquewhite;
   font-weight: bolder;
-  padding:5px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   border-top-left-radius: 25%;
@@ -38,31 +42,40 @@
   margin: auto;
 }
 .blogs{
-  background-color: rgb(161, 188, 223);
+  background-color: rgb(18, 94, 194);
   color:black;
   padding: 0px 30px;
   padding-top: 10px;
 }
 .blogs-list{
   display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  gap: 10px;
+  padding: 10px 20px;
+  grid-auto-flow: row;
+}
+@media only screen and (max-width:1100px){
+  .blogs-list{
+  display: grid;
   grid-template-columns: auto auto auto;
   gap: 10px;
   padding: 10px 20px;
   grid-auto-flow: row;
 }
-@media only screen and (max-width:600px){
+}
+@media only screen and (max-width:700px){
   .blogs-list{
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: auto auto;
   gap: 10px;
   padding: 10px 20px;
   grid-auto-flow: row;
 }
 }
-@media only screen and (max-width:500px){
+@media only screen and (max-width:400px){
   .blogs-list{
   display: grid;
-  grid-template-columns: 50%;
+  grid-template-columns: auto;
   gap: 10px;
   justify-items: center;
   padding: 10px 20px;
@@ -81,20 +94,46 @@
 }
 .form{
   padding:20px;
-  background-color: blanchedalmond;
+  background-color: rgb(58, 147, 231);
+  margin: 0px auto;
+  width:50%;
+  font-size: 1.4em;
+}
+@media only screen and (max-width:600px){
+  .form{
+  padding:20px;
+  background-color: rgb(58, 147, 231);
+  margin: 0px auto;
+  width:auto;
+}
 }
 .form>input{
   padding:20px;
 }
 .overlay{
   position: relative;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   overflow: hidden;
-  display: flex;
 }
 .overlay-text{
-  opacity: 0.5;
  position: absolute;
- background-color: rgba(7, 3, 0, 0.884);
- color: seashell;
- width: 200px;
+ left:0;
+ right:0;
+ top: 0;
+ max-height: 100%;
+ background-color: blanchedalmond;
+ color:black;
+ padding: 5px;
+ overflow-y: auto;
+ transform:translateX(100%);
+ transition: 0.5s ease-in-out;
+}
+.overlay:hover .overlay-text{
+transform: translateX(0%);
+}
+input{
+  margin: 5px;
 }

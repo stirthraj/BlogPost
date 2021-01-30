@@ -55,6 +55,7 @@ class Admin extends React.Component{
         .then(res=>{
             // console.log(res.data);
             alert('blog added');
+            window.location.assign('http://localhost:3000/');
         })
     }
     render(){
@@ -77,7 +78,7 @@ class Admin extends React.Component{
                 <form onSubmit={this.onSubmitPostHandler}>
                     {/* <input type="text" name="name"  onChange={this.onChangeHandler}/> */}
                     Title:<input type="text" name="title" onChange={this.onChangeHandler}/><br></br>
-                    Content:<input type="text" name="content" onChange={this.onChangeHandler}/>
+                    Content:<textarea rows="5" type="text" name="content" onChange={this.onChangeHandler}/>
                     <button type="submit">Post</button>
                 </form>
             </div>

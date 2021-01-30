@@ -27,7 +27,7 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
-      <div style={{backgroundColor: "#a1bcdf"}}>
+      <div className="nav-layout">
       <Router>
       <div className="nav">
       <div>BLOG CENTER</div>
@@ -59,7 +59,7 @@ class App extends React.Component {
             </div>)}
            </div>
       </Card>
-      <Card className="App-footer"><h1>BLOG CENTER</h1><h2>Write Your Story</h2><h3>Share Your Thought with other</h3></Card>
+      <Card className="App-footer"><h2>BLOG CENTER</h2><h3>Write Your Story</h3><h4>Share Your Thought with other</h4></Card>
     </div>
   );}
   //render function end
